@@ -30,6 +30,8 @@ namespace CustomWindow
 
         private double _screenWidth         = 0f;
         private double _screenHeight        = 0f;
+        private double _fullScreenWidth     = 0f;
+        private double _fullScreenHeight    = 0f;
 
         /**
          * The whole point of "overriding" the standard window TitleBar is
@@ -42,14 +44,18 @@ namespace CustomWindow
 
             InitializeComponent();
 
-            _currentWindowTop       = Application.Current.MainWindow.Top;
-            _currentWindowLeft      = Application.Current.MainWindow.Left;
             _currentWindowWidth     = Application.Current.MainWindow.Width;
             _currentWindowHeight    = Application.Current.MainWindow.Height;
 
             // In my case: 1980x1017 - is this "minus the task bar"? Not sure why but this should actually be ~1980x1020-ish
             _screenWidth            = SystemParameters.FullPrimaryScreenWidth;
             _screenHeight           = SystemParameters.FullPrimaryScreenHeight;
+            _fullScreenWidth        = SystemParameters.VirtualScreenWidth;
+            _fullScreenHeight       = SystemParameters.VirtualScreenHeight;
+
+            // Update these values when the window is being moved or resized manually!
+            _currentWindowTop       = ((_fullScreenHeight - _currentWindowHeight) / 2);
+            _currentWindowLeft      = ((_fullScreenWidth - _currentWindowWidth) / 2);
 
         }
 
