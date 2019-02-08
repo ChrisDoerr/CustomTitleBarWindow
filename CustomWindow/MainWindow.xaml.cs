@@ -57,6 +57,9 @@ namespace CustomWindow
             _currentWindowTop       = ((_fullScreenHeight - _currentWindowHeight) / 2);
             _currentWindowLeft      = ((_fullScreenWidth - _currentWindowWidth) / 2);
 
+            // THIS might be of interest:
+            // https://stackoverflow.com/questions/39882290/custom-wpf-window-style
+
         }
 
         private void HandleClick_BtnMinimze(object sender, RoutedEventArgs e)

@@ -11,8 +11,14 @@
         WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Background="#555">
-    <StackPanel>
-        <Grid Background="#424242">
+    <!-- WINDOW GRID -->
+    <Grid x:Name="MasterWindowGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!-- WINDOW: TITLE BAR -->
+        <Grid x:Name="WindowTitleBar" Grid.Row="0" Background="#424242">
             <Grid.Effect>
                 <DropShadowEffect  BlurRadius="5" Direction="-90" RenderingBias="Quality" ShadowDepth="1" />
             </Grid.Effect>
@@ -94,5 +100,9 @@
                 </Button.Style>
             </Button>
         </Grid>
-    </StackPanel>
+        <!-- WINDOW: BODY -->
+        <Border Grid.Row="1" BorderThickness="1" BorderBrush="#424242">
+            <WrapPanel x:Name="WindowBody" Grid.Row="1" />
+        </Border>
+    </Grid>
 </Window>
