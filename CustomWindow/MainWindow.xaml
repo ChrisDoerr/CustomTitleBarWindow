@@ -20,6 +20,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
+            <!-- Can might want to replace the fist TextBlock with an Image (icon) control -->
             <TextBlock Grid.Column="0" Padding="10" FontSize="14" Foreground="#FFF" Text="[ico]" />
             <TextBlock Grid.Column="1" Padding="10" FontSize="14" Foreground="#FFF" Text="Custom Window Demo" />
             <!-- Button: Minimze -->
