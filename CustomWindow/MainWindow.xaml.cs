@@ -20,6 +20,13 @@ namespace CustomWindow
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        /**
+         * The whole point of "overriding" the standard window TitleBar is
+         * so you can style it in a way that fits into your application theme.
+         * 
+         * The downside is, of course, that will have to implement the functionality again and on your own!
+         */
         public MainWindow()
         {
 
