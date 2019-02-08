@@ -13,6 +13,9 @@
         Background="#555">
     <StackPanel>
         <Grid Background="#424242">
+            <Grid.Effect>
+                <DropShadowEffect  BlurRadius="5" Direction="-90" RenderingBias="Quality" ShadowDepth="1" />
+            </Grid.Effect>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40" />
                 <ColumnDefinition Width="*"/>
