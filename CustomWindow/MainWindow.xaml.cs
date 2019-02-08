@@ -94,6 +94,7 @@ namespace CustomWindow
                 Application.Current.MainWindow.Left     = 0;
                 Application.Current.MainWindow.Width    = _screenWidth;
                 Application.Current.MainWindow.Height   = _screenHeight;
+
             }
 
         }

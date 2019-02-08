@@ -8,7 +8,7 @@
         Title="Custom Window Demo"
         x:Name="MasterWindow"
         Width="1280" Height="720"
-        WindowStyle="None"
+        WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Background="#555">
     <StackPanel>
