@@ -21,6 +21,16 @@ namespace CustomWindow
     public partial class MainWindow : Window
     {
 
+        private double _currentWindowTop    = 0f;
+        private double _currentWindowLeft   = 0f;
+        private double _currentWindowWidth  = 0f;
+        private double _currentWindowHeight = 0f;
+
+        private string _currentWindowState  = "Normal";
+
+        private double _screenWidth         = 0f;
+        private double _screenHeight        = 0f;
+
         /**
          * The whole point of "overriding" the standard window TitleBar is
          * so you can style it in a way that fits into your application theme.
@@ -31,6 +41,15 @@ namespace CustomWindow
         {
 
             InitializeComponent();
+
+            _currentWindowTop       = Application.Current.MainWindow.Top;
+            _currentWindowLeft      = Application.Current.MainWindow.Left;
+            _currentWindowWidth     = Application.Current.MainWindow.Width;
+            _currentWindowHeight    = Application.Current.MainWindow.Height;
+
+            // In my case: 1980x1017 - is this "minus the task bar"? Not sure why but this should actually be ~1980x1020-ish
+            _screenWidth            = SystemParameters.FullPrimaryScreenWidth;
+            _screenHeight           = SystemParameters.FullPrimaryScreenHeight;
 
         }
 
@@ -44,13 +63,33 @@ namespace CustomWindow
         private void HandleClick_BtnMaximize(object sender, RoutedEventArgs e)
         {
 
-            this.WindowState = (this.WindowState == WindowState.Maximized) ? WindowState.Normal : WindowState.Maximized;
+            // this.WindowState = (this.WindowState == WindowState.Maximized) ? WindowState.Normal : WindowState.Maximized;
+
+
 
             /* @todo When   WindowStyle="None"      maximizing will resutlt in a proper fullscreen!
              * But for most of the time it is wanted to show "fullscreen with task bar" when maximizing.
              * So: How do you get the current system's screen resolution + the taskbar width and height
              * (and actually also the position since BOTTOM is just the default position!)
              */
+
+            _currentWindowState = ( _currentWindowState == "Normal" ? "Maximized" : "Normal" );
+
+            if( _currentWindowState == "Normal" )
+            {
+                Application.Current.MainWindow.Top      = _currentWindowTop;
+                Application.Current.MainWindow.Left     = _currentWindowLeft;
+                Application.Current.MainWindow.Width    = _currentWindowWidth;
+                Application.Current.MainWindow.Height   = _currentWindowHeight;
+            }
+            else if( _currentWindowState == "Maximized" )
+            {
+                Application.Current.MainWindow.Top      = 0;
+                Application.Current.MainWindow.Left     = 0;
+                Application.Current.MainWindow.Width    = _screenWidth;
+                Application.Current.MainWindow.Height   = _screenHeight;
+            }
+
         }
 
         private void HandleClick_BtnClose( object sender, RoutedEventArgs e)
