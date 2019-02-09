@@ -8,7 +8,7 @@
         Title="Custom Window Demo"
         x:Name="MasterWindow"
         Width="1280" Height="720"
-        WindowStyle="None" ResizeMode="NoResize"
+        WindowStyle="None" ResizeMode="CanResizeWithGrip" AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         Background="#555">
     <!-- WINDOW GRID -->
