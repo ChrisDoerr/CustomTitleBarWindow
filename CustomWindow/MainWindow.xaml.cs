@@ -47,18 +47,14 @@ namespace CustomWindow
             _currentWindowWidth     = Application.Current.MainWindow.Width;
             _currentWindowHeight    = Application.Current.MainWindow.Height;
 
-            // In my case: 1980x1017 - is this "minus the task bar"? Not sure why but this should actually be ~1980x1020-ish
-            _screenWidth            = SystemParameters.FullPrimaryScreenWidth;
-            _screenHeight           = SystemParameters.FullPrimaryScreenHeight;
+            _screenWidth            = SystemParameters.FullPrimaryScreenWidth;          // Not sure why, but MaximizedPrimaryScreenWidth seems slightly bigger than my actual resolution?!
+            _screenHeight           = SystemParameters.MaximizedPrimaryScreenHeight;    // ...whereas the *Height value seems right (resoltuion/height - taskbar/height)
             _fullScreenWidth        = SystemParameters.VirtualScreenWidth;
             _fullScreenHeight       = SystemParameters.VirtualScreenHeight;
 
-            // Update these values when the window is being moved or resized manually!
+            // Update these values when the window is being moved or resized manually
             _currentWindowTop       = ((_fullScreenHeight - _currentWindowHeight) / 2);
             _currentWindowLeft      = ((_fullScreenWidth - _currentWindowWidth) / 2);
-
-            // THIS might be of interest:
-            // https://stackoverflow.com/questions/39882290/custom-wpf-window-style
 
             /**
              * &#128469;    Minimize
@@ -78,16 +74,6 @@ namespace CustomWindow
 
         private void HandleClick_BtnMaximize(object sender, RoutedEventArgs e)
         {
-
-            // this.WindowState = (this.WindowState == WindowState.Maximized) ? WindowState.Normal : WindowState.Maximized;
-
-
-
-            /* @todo When   WindowStyle="None"      maximizing will resutlt in a proper fullscreen!
-             * But for most of the time it is wanted to show "fullscreen with task bar" when maximizing.
-             * So: How do you get the current system's screen resolution + the taskbar width and height
-             * (and actually also the position since BOTTOM is just the default position!)
-             */
 
             _currentWindowState = ( _currentWindowState == "Normal" ? "Maximized" : "Normal" );
 
