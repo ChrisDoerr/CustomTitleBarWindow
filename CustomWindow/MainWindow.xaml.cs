@@ -60,6 +60,13 @@ namespace CustomWindow
             // THIS might be of interest:
             // https://stackoverflow.com/questions/39882290/custom-wpf-window-style
 
+            /**
+             * &#128469;    Minimize
+             * &#128471;    Restore Down
+             * &#128470;    Maximize
+             * &#128473;    Close
+             */
+
         }
 
         private void HandleClick_BtnMinimze(object sender, RoutedEventArgs e)

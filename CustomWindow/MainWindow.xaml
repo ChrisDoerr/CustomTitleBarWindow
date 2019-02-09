@@ -33,7 +33,7 @@
             <TextBlock Grid.Column="0" Padding="10" FontSize="14" Foreground="#FFF" Text="[ico]" />
             <TextBlock Grid.Column="1" Padding="10" FontSize="14" Foreground="#FFF" Text="Custom Window Demo" />
             <!-- Button: Minimze -->
-            <Button Grid.Column="2" Padding="10" Foreground="#FFF" FontSize="14" Content="_" ToolTip="Minimize" Width="40" BorderThickness="0" Cursor="Hand" Click="HandleClick_BtnMinimze">
+            <Button Grid.Column="2" Padding="10" Foreground="#FFF" FontSize="14" Content="&#128469;" ToolTip="Minimize" Width="40" BorderThickness="0" Cursor="Hand" Click="HandleClick_BtnMinimze">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#424242" />
@@ -56,7 +56,7 @@
                 </Button.Style>
             </Button>
             <!-- Button: Maximize -->
-            <Button Grid.Column="3" Padding="10" Foreground="#FFF" FontSize="14" Content="□" ToolTip="Maximize" Width="40" BorderThickness="0" Cursor="Hand" Click="HandleClick_BtnMaximize">
+            <Button Grid.Column="3" Padding="10" Foreground="#FFF" FontSize="14" Content="&#128470;" ToolTip="Maximize" Width="40" BorderThickness="0" Cursor="Hand" Click="HandleClick_BtnMaximize">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#424242" />
@@ -78,7 +78,7 @@
                 </Button.Style>
             </Button>
             <!-- Button: Close -->
-            <Button Grid.Column="4" Padding="10" Foreground="#FFF" FontSize="14" Content="&#x2715;" ToolTip="Close" Width="40" BorderThickness="0" Cursor="Hand" Click="HandleClick_BtnClose">
+            <Button Grid.Column="4" Padding="10" Foreground="#FFF" FontSize="14" Content="&#128473;" ToolTip="Close" Width="40" BorderThickness="0" Cursor="Hand" Click="HandleClick_BtnClose">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#424242" />
